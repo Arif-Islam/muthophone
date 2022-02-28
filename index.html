@@ -24,15 +24,15 @@
     </script>
 </head>
 
-<body class="bg-bodyBg mx-4 md:mx-12 lg:mx-auto lg:w-9/12 xl:2/3">
+<body class=" mx-4 md:mx-12 lg:mx-auto lg:w-9/12 xl:2/3">
     <!-- Site Name -->
     <h1 class="text-2xl lg:text-3xl xl:text-4xl font-semibold text-center text-zinc-700 my-8">Muthophone</h1>
 
     <!-- Search box -->
     <div class="flex items-strech justify-center space-x-1 mb-14">
         <input id="search-input" type="text"
-            class="border-2 rounded w-3/5 h-10 px-3 border-cyan-500 focus:outline-none focus:ring focus:ring-cyan-200"
-            placeholder="Search...">
+            class="border-2 rounded w-3/5 lg:w-3/4 2xl:w-5/6 h-10 px-3 border-cyan-500 focus:outline-none focus:ring focus:ring-cyan-200"
+            placeholder="Search phones...">
         <button onclick="searchResults()" class="bg-cyan-500 px-4 rounded hover:bg-cyan-700">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
                 class="w-4 text-stone-100 hover:text-stone-300" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +49,27 @@
 
     </section>
 
-    <!-- Search Results -->
-    <section id="search-results">
+    <!-- spinner -->
+    <div id="spinner" class="hidden mb-8">
+        <div class="flex justify-center items-center">
+            <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        </div>
+    </div>
 
+    <!-- error messages -->
+    <h2 id="warning"
+        class="hidden text-center text-xl text-slate-100 border-2 border-rose-500 p-2 bg-rose-500 rounded-lg w-3/4 md:w-1/2 mx-auto">
+        Please search by phone names!!!</h2>
+    <h2 id="no-match"
+        class="hidden text-center text-xl text-slate-100 border-2 border-rose-500 p-2 bg-rose-500 rounded-lg w-3/4 md:w-1/2 mx-auto">
+        Sorry, No phones found!!!</h2>
+
+    <!-- Search Results -->
+    <section class="w-9/12 mx-auto mb-8">
+        <div id="phones" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto ">
+            <!-- <h1>Search Results found for: </h1> -->
+
+        </div>
     </section>
 
     <!-- js link up -->

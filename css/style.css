@@ -1,0 +1,10 @@
+.phone-div-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+    /* background-color: #F7F8F3; */
+}
