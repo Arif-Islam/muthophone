@@ -71,6 +71,7 @@ const displayPhones = (phones, searchText) => {
 
 // loading phone details using api
 const loadPhoneDetails = phoneSlug => {
+    document.getElementById('spinner').style.display = 'block';
     let url = 'https://openapi.programming-hero.com/api/phone/';
     // console.log(phoneSlug);
     url += phoneSlug;
@@ -109,6 +110,7 @@ const displayPhoneDetails = config => {
         }
         c++;
     }
+    document.getElementById('spinner').style.display = 'none';
     // console.log(sensors);
     if (config.others == null || config.others == undefined) {
         featuresDiv.innerHTML = `
