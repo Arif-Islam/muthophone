@@ -8,6 +8,7 @@ const searchResults = () => {
         document.getElementById('warning').style.display = 'block';
         document.getElementById('spinner').style.display = 'none';
         document.getElementById('phones').style.display = 'none';
+        document.getElementById('no-match').style.display = 'none';
     }
     else {
         loadPhones(searchText);
@@ -51,11 +52,41 @@ const displayPhones = phones => {
                 <img class="rounded-md pt-4" src="${phone.image}">
                 <h2 class="text-xl lg:text-2xl font-medium text-zinc-700 pt-4">Brand: ${phone.brand}</h2>
                 <h2 class="text-xl lg:text-2xl font-medium text-zinc-700 pt-4">${phone.phone_name}</h2>
-                <button class="text-lg lg:text-xl font-medium text-gray-800 rounded-md my-4 px-5 py-2 bg-gray-300  hover:bg-gray-400">View Details</button>
+                <button onclick="loadPhoneDetails('${phone.slug}')" class="text-lg lg:text-xl font-medium text-gray-800 rounded-md my-4 px-5 py-2 bg-gray-300 hover:bg-gray-400">View Details</button>
             `;
             allPhonesDiv.appendChild(phoneDiv);
         })
     }
+}
+
+// loading phone details using api
+const loadPhoneDetails = phoneSlug => {
+    let url = 'https://openapi.programming-hero.com/api/phone/';
+    // console.log(phoneSlug);
+    url += phoneSlug;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayPhoneDetails(data.data));
+}
+
+// display phone specs
+const displayPhoneDetails = config => {
+    console.log(config);
+    document.getElementById('hidden-details').style.display = 'block';
+    const phoneDetailDiv = document.getElementById('mobile-details');
+    phoneDetailDiv.textContent = '';
+    const imageNamediv = document.createElement('div');
+    let releaseDate = config.releaseDate;
+    if (releaseDate == '') {
+        releaseDate = 'No release date found!'
+    }
+    imageNamediv.innerHTML = `
+        <img src=${config.image}>
+        <h2 class="text-xl lg:text-2xl font-medium text-zinc-700 pt-3">${config.name}</h2>
+        <h2 class="text-lg lg:text-xl font-medium text-zinc-700 pt-3">${releaseDate}</h2>
+    `;
+
+    phoneDetailDiv.appendChild(imageNamediv);
 }
 
 
