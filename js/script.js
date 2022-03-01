@@ -75,18 +75,96 @@ const displayPhoneDetails = config => {
     document.getElementById('hidden-details').style.display = 'block';
     const phoneDetailDiv = document.getElementById('mobile-details');
     phoneDetailDiv.textContent = '';
-    const imageNamediv = document.createElement('div');
-    let releaseDate = config.releaseDate;
-    if (releaseDate == '') {
-        releaseDate = 'No release date found!'
-    }
-    imageNamediv.innerHTML = `
+
+    const imagediv = document.createElement('div');
+    imagediv.classList.add('image-div-style');
+    imagediv.innerHTML = `
         <img src=${config.image}>
-        <h2 class="text-xl lg:text-2xl font-medium text-zinc-700 pt-3">${config.name}</h2>
-        <h2 class="text-lg lg:text-xl font-medium text-zinc-700 pt-3">${releaseDate}</h2>
     `;
 
-    phoneDetailDiv.appendChild(imageNamediv);
+    const featuresDiv = document.createElement('div');
+    let releaseDate = config.releaseDate;
+    if (releaseDate == '') {
+        releaseDate = 'No release date found!';
+    }
+    const sensorsArray = config.mainFeatures.sensors;
+    let sensors = '', c = 0;
+    for (const iterator of sensorsArray) {
+        if (c == sensorsArray.length - 1) {
+            sensors += iterator;
+        }
+        else {
+            sensors += iterator + ', ';
+        }
+        c++;
+    }
+    // console.log(sensors);
+    featuresDiv.innerHTML = `
+        <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-700 text-center">${config.name}</h2>
+        <h2 class="text-lg lg:text-xl font-normal text-zinc-700 text-center mt-2">${releaseDate}</h2>
+        <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-700 text-center my-3">Main Features</h2>
+        <hr class="border border-black">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Chipset: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.chipSet}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Display: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.displaySize}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Memory: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.memory}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Sensors: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${sensors}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Storage: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.storage}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-700 text-center my-3">Other Features</h2>
+        <hr class="border border-black">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Bluetooth: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.Bluetooth}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">GPS: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.GPS}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">NFC: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.NFC}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Radio: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.Radio}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">USB: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.USB}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+        <div class="flex justify-evenly items-center p-2">
+            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">WLAN: </h2>
+            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.WLAN}</h2> 
+        </div>
+        <hr class="border border-gray-200">
+    `;
+
+    phoneDetailDiv.appendChild(imagediv);
+    phoneDetailDiv.appendChild(featuresDiv);
 }
 
 
