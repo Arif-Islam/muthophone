@@ -1,3 +1,4 @@
+/* card style */
 .phone-div-style{
     display: flex;
     flex-direction: column;
@@ -8,10 +9,3 @@
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     /* background-color: #F7F8F3; */
 }
-
-/* .image-name-div-style{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
