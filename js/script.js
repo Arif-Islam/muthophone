@@ -4,10 +4,10 @@ const searchResults = () => {
     document.getElementById('hidden-details').style.display = 'none';
     const searchText = document.getElementById('search-input').value;
     // checking some cases
-    if (!isNaN(searchText) || searchText == '') {
+    if (searchText == '') {
         document.getElementById('warning').style.display = 'block';
         document.getElementById('spinner').style.display = 'none';
-        document.getElementById('phones').style.display = 'none';
+        document.getElementById('hidden-phones').style.display = 'none';
         document.getElementById('no-match').style.display = 'none';
         document.getElementById('message').style.display = 'none';
     }
@@ -34,7 +34,7 @@ const displayPhones = (phones, searchText) => {
         document.getElementById('no-match').style.display = 'block';
         document.getElementById('spinner').style.display = 'none';
         document.getElementById('warning').style.display = 'none';
-        document.getElementById('phones').style.display = 'none';
+        document.getElementById('hidden-phones').style.display = 'none';
         document.getElementById('hidden-details').style.display = 'none';
         document.getElementById('message').style.display = 'none';
     }
@@ -43,6 +43,8 @@ const displayPhones = (phones, searchText) => {
         document.getElementById('no-match').style.display = 'none';
         document.getElementById('spinner').style.display = 'none';
         document.getElementById('hidden-details').style.display = 'none';
+        document.getElementById('hidden-phones').style.display = 'block';
+        document.getElementById('message').style.display = 'block';
         // console.log(phones);
         const allPhonesDiv = document.getElementById('phones');
         allPhonesDiv.textContent = '';
@@ -79,6 +81,7 @@ const loadPhoneDetails = phoneSlug => {
 
 // display phone specs
 const displayPhoneDetails = config => {
+    window.scrollTo(0, 0);
     // console.log(config);
     document.getElementById('hidden-details').style.display = 'block';
     const phoneDetailDiv = document.getElementById('mobile-details');
