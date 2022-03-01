@@ -10,6 +10,7 @@ const searchResults = () => {
         document.getElementById('hidden-phones').style.display = 'none';
         document.getElementById('no-match').style.display = 'none';
         document.getElementById('message').style.display = 'none';
+        document.getElementById('copyright').style.position = 'fixed';
     }
     else {
         loadPhones(searchText);
@@ -37,6 +38,7 @@ const displayPhones = (phones, searchText) => {
         document.getElementById('hidden-phones').style.display = 'none';
         document.getElementById('hidden-details').style.display = 'none';
         document.getElementById('message').style.display = 'none';
+        document.getElementById('copyright').style.position = 'fixed';
     }
     else {
         document.getElementById('warning').style.display = 'none';
@@ -45,6 +47,7 @@ const displayPhones = (phones, searchText) => {
         document.getElementById('hidden-details').style.display = 'none';
         document.getElementById('hidden-phones').style.display = 'block';
         document.getElementById('message').style.display = 'block';
+        document.getElementById('copyright').style.position = 'static';
         // console.log(phones);
         const allPhonesDiv = document.getElementById('phones');
         allPhonesDiv.textContent = '';
