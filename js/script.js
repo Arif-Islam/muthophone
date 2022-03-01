@@ -104,61 +104,61 @@ const displayPhoneDetails = config => {
         <h2 class="text-lg lg:text-xl font-normal text-zinc-700 text-center mt-2">${releaseDate}</h2>
         <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-700 text-center my-3">Main Features</h2>
         <hr class="border border-black">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Chipset: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.chipSet}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Chipset: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.mainFeatures.chipSet}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Display: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.displaySize}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Display: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.mainFeatures.displaySize}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Memory: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.memory}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Memory: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.mainFeatures.memory}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Sensors: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${sensors}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Sensors: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${sensors}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Storage: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.mainFeatures.storage}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Storage: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.mainFeatures.storage}</h2> 
         </div>
         <hr class="border border-gray-200">
         <h2 class="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-700 text-center my-3">Other Features</h2>
         <hr class="border border-black">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Bluetooth: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.Bluetooth}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Bluetooth: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.Bluetooth}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">GPS: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.GPS}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">GPS: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.GPS}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">NFC: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.NFC}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">NFC: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.NFC}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">Radio: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.Radio}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">Radio: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.Radio}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">USB: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.USB}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">USB: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.USB}</h2> 
         </div>
         <hr class="border border-gray-200">
-        <div class="flex justify-evenly items-center p-2">
-            <h2 class="text-xl lg:text-2xl font-medium text-zinc-700">WLAN: </h2>
-            <h2 class="text-lg lg:text-xl font-normal text-zinc-700">${config.others.WLAN}</h2> 
+        <div class="flex justify-between items-center p-2">
+            <h2 class="text-lg lg:text-2xl font-medium text-zinc-700 mr-4 lg:mr-0">WLAN: </h2>
+            <h2 class="text-base lg:text-xl font-normal text-zinc-700">${config.others.WLAN}</h2> 
         </div>
         <hr class="border border-gray-200">
     `;
